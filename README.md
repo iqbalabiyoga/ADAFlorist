@@ -5,11 +5,7 @@ untuk :
 
 
 
-<<<<<<< HEAD
 ## Dipersiapkan oleh:
-=======
-Dipersiapkan oleh:
->>>>>>> 0a829d3718c29c2899f31c60ecba19cdd524470a
 - Iqbal Abiyoga	(G64140014)
 - Rahmad Ilham Pratama	(G64140016)
 - David Tahi Ulubalang	(G64140060)
@@ -27,8 +23,7 @@ Seiring dengan berkembangnya teknologi dan informasi, seperti internet, segala b
 
 
 ### Versi Sistem
-1.0
-
+1.1
 ### Dikembangkan dengan
 
 Adaflorist dikembangkan menggunakan perangkat lunak aplikasi : 
@@ -41,8 +36,4 @@ Adaflorist dikembangkan menggunakan perangkat lunak aplikasi :
 ### Akses Online
 AdaFlorist sudah dapat diakses melalui laman : http://adaflorist.hol.es
 dihosting menggunakan :
-<<<<<<< HEAD
 India Hostinger
-=======
-#### India Hostinger
->>>>>>> 0a829d3718c29c2899f31c60ecba19cdd524470a
