@@ -13,8 +13,10 @@
 </head>
 
 <?php session_start();
+if(empty($_SESSION['user'])&&empty($_SESSION['admin'])) echo "<script>document.location.href='forbid.php'</script>";
 include 'header.php';
-$idcust=$_GET['idcustomer'];
+$idcust=$_GET['idcustomer']; 
+if(isset($_SESSION['user'])&&$_SESSION['idcust']!=$idcust) echo "<script>document.location.href='forbid.php'</script>";
 $pelanggans=mysqli_query($connect,"select * from customer where ID_customer='$idcust'");
 $pelanggan=mysqli_fetch_array($pelanggans);
 $transs=mysqli_query($connect, "select * from transaksi where id_customer='$idcust'");
@@ -39,7 +41,7 @@ while($trans=mysqli_fetch_array($transs)){
     $no=0;?>
     <tr>
         <td>
-            <a href='detail_trans.php?idtransaksi=<?php echo $trans['ID_Transaksi']?>&idcustomer=<?php echo $pelanggan['ID_customer']?>'>
+            <a href='detail_trans.php?idtransaksi=<?php echo $trans['ID_Transaksi']?>'>
                 <?php echo $trans['ID_Transaksi']?></a>
         </td>
         <td>

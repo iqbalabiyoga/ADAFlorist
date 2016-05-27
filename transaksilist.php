@@ -37,14 +37,14 @@
     ?>
                 <tr>
                     <td width=10%>
-                        <?php echo "<a href='detail_trans.php?idtransaksi=".$trans['ID_Transaksi']."&idcustomer=".$idpel."'>".$trans['ID_Transaksi']."</a>"?>
+                        <?php echo "<a href='detail_trans.php?idtransaksi=".$trans['ID_Transaksi']."'>".$trans['ID_Transaksi']."</a>"?>
                     </td>
                     <td>
                         <?php echo $trans['Tanggal_transaksi']?>
                     </td>
                     <td width=10%>
                         
-                        <?php echo $trans['Total_Biaya']?>
+                        Rp <?php echo $trans['Total_Biaya']?>
                     </td>
                     <td>
                         <?php echo $pelanggan['nama'];?>
