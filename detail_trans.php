@@ -18,7 +18,9 @@
     include 'connect.php';
     if(empty($_SESSION['user'])&&empty($_SESSION['admin'])) echo "<script>document.location.href='forbid.php'</script>";
     $no=0;
-    $id=$_GET['idtransaksi'];
+    include 'anti-inject.php';
+    $ids=$_GET['idtransaksi'];
+    $id=anti_injection($ids);
     $nomor=$id;
     $transs=mysqli_query($connect,"select * from transaksi where ID_Transaksi='$id'");
     $trans = mysqli_fetch_assoc($transs);

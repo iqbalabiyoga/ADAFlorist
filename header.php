@@ -33,7 +33,7 @@ $data+=(count($_SESSION['cart_items']))?>
                             <?php if(isset($_SESSION['user'])) echo "<strong><li>Halo, ".$pembeli['nama']."</li></strong>"?>
 
                                 <?php if(isset($_SESSION['user']))
-                    echo "<li> <a href='transaksi_user.php?idcustomer=".$iduser."'>Daftar Transaksi Saya</a></li>";?>
+                    echo "<li class='tooltipped' data-position='top' data-delay='50' data-tooltip='Lihat transaksi yang pernah Anda lakukan'> <a href='transaksi_user.php?idcustomer=".$iduser."'>Daftar Transaksi Saya</a></li>";?>
                                     <li> </li>
                                     <?php if(isset($_SESSION['user'])||isset($_SESSION['admin']))
                 echo "<li> <a class='waves effect waves-light btn cyan' href='logout.php'>Sign Out</a></li>
@@ -45,7 +45,7 @@ $data+=(count($_SESSION['cart_items']))?>
                     echo "<li> <a href='adminhome.php'>Admin</a></li>";
                 ?>
 
-                                            <li><a href='keranjang.php'><i class='material-icons'>shopping_cart</i></a></li>
+                                            <li><a href='keranjang.php'><i class='material-icons tooltipped' data-position="top" data-delay="50" data-tooltip="Keranjang Belanja Anda">shopping_cart</i></a></li>
                                             <li>
                                                 <?php if($data>0) echo $data; else echo 0;?>
                                             </li>

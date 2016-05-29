@@ -1,7 +1,14 @@
 <?php
 include "connect.php";
+function anti_injection($data){
+$filter = stripslashes(strip_tags(htmlspecialchars($data,ENT_QUOTES)));
+
+return $filter;
+
+}
 if(!empty($_POST['login'])){
-$Nama=$_POST['Nama'];
+$Namas=$_POST['Nama'];
+$Nama=anti_injection($Namas);
 $passwords=$_POST['password'];
 $password=md5($passwords);
 

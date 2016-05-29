@@ -3,8 +3,9 @@
 <?php
     session_start();
 	include 'connect.php';
-	$id = $_GET['idtanaman'];
-    $idbarang;
+    include 'anti-inject.php';
+	$ids = $_GET['idtanaman'];
+    $id=anti_injection($ids);
 ?>
 
     <head>

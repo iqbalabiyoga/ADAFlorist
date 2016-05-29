@@ -32,8 +32,11 @@ include 'header.php';
                         </div>
                     </form>
                 </div>
-                <?php $key=$_GET['cari'];?>
-                    <?php $hasils=mysqli_query($connect,"select * from tanaman where Nama_Tanaman like '%$key%' or Deskripsi_Tanaman like '%$key%' or Jenis_Tanaman like '%$key%' order by rand()");
+                <?php
+                    include 'anti-inject.php';
+                    $keys=$_GET['cari'];
+                    $key=anti_injection($keys);
+                    $hasils=mysqli_query($connect,"select * from tanaman where Nama_Tanaman like '%$key%' or Deskripsi_Tanaman like '%$key%' or Jenis_Tanaman like '%$key%' order by rand()");
         $jums=mysqli_query($connect,"select * from tanaman where Nama_Tanaman like '%$key%' or Deskripsi_Tanaman like '%$key%' or Jenis_Tanaman like '%$key%' order by rand()");
         $jum=mysqli_fetch_array($jums);
         if($jum>0){ ?>

@@ -15,7 +15,9 @@
 <?php session_start();
 if(empty($_SESSION['user'])&&empty($_SESSION['admin'])) echo "<script>document.location.href='forbid.php'</script>";
 include 'header.php';
-$idcust=$_GET['idcustomer']; 
+include 'anti-inject.php';
+$idcusts=$_GET['idcustomer'];
+$idcust=anti_injection($idcusts);
 if(isset($_SESSION['user'])&&$_SESSION['idcust']!=$idcust) echo "<script>document.location.href='forbid.php'</script>";
 $pelanggans=mysqli_query($connect,"select * from customer where ID_customer='$idcust'");
 $pelanggan=mysqli_fetch_array($pelanggans);

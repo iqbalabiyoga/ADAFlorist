@@ -22,13 +22,13 @@
     include 'header.php';}
     include 'connect.php';
     $no=0;
-    $idpelanggan=$_SESSION['idcust'];
     $id=$_GET['idtransaksi'];
     $nomor=$id;
-    $pelanggans=mysqli_query($connect,"select * from customer where ID_customer='$idpelanggan'");
-    $pelanggan=mysqli_fetch_array($pelanggans);
     $transs=mysqli_query($connect,"select * from transaksi where ID_Transaksi='$id'");
     $trans = mysqli_fetch_assoc($transs);
+    $idpelanggan=$trans['id_customer']; if(isset($_SESSION['user'])&&$idpelanggan!=$_SESSION['idcust']) echo "<script>document.location.href='forbid.php'</script>";
+    $pelanggans=mysqli_query($connect,"select * from customer where ID_customer='$idpelanggan'");
+    $pelanggan=mysqli_fetch_array($pelanggans);
     $detils=mysqli_query($connect,"Select sum(jumlah_beli) as jumlahs from detail_transaksi where transaksi_id='$id'");
     $detil=mysqli_fetch_assoc($detils);
     ?>
