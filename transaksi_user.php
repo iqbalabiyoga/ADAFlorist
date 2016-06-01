@@ -50,7 +50,10 @@ while($trans=mysqli_fetch_array($transs)){
         <?php echo $trans['Tanggal_transaksi']?>
         </td>
         <td>
-        Rp <?php echo $trans['Total_Biaya']?>,-
+        Rp <?php
+        $tots=$trans['Total_Biaya'];
+            echo number_format("$tots",0,",",".")
+         ?>,-
         </td>
         <td>
         <?= $trans['Konfirmasi']==1 ? 'Sudah Dikonfirmasi' : 'Belum Dikonfirmasi' ?>

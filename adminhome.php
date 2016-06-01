@@ -153,7 +153,9 @@
                         $uang=mysqli_fetch_array(mysqli_query($connect,"select sum(Total_Biaya) as tot from transaksi"));?>
                         <h5 class="pink white-text">Penjualan Total</h5>
                         <h4><?php echo $jual['jum'] ?> tanaman</h4>
-                        <h4 class="white-text brown">Rp <?php echo $uang['tot']?></h4>
+                        <h4 class="white-text brown">Rp <?php
+                        $tots=$uang['tot'];
+                            echo  number_format("$tots",0,",",".")?></h4>
                     </div>
                 </div>
             </div>

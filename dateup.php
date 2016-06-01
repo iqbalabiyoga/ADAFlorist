@@ -41,7 +41,10 @@
             <td align="center"><?php echo $data['ID_Tanaman'] ?></td>
             <td width=18%><a href="tanaman.php?idtanaman=<?php echo $data['ID_Tanaman']?>"><?php echo  $data['Nama_Tanaman']?></a></td>
             <td width=15%><?php echo $data['Jenis_Tanaman'] ?></td>
-            <td width=10%><?= "Rp "?><?php echo $data['Harga_Tanaman'] ?></td>
+            <td width=10%><?= "Rp "?><?php
+            $tots= $data['Harga_Tanaman'];
+            echo 
+            number_format("$tots",0,",",".") ?></td>
             <td><?php echo $data['Jumlah_Stok'] ?></td>
             <td width=50%><?php echo $data['Deskripsi_Tanaman'] ?></td>
             <td><a class='waves effect waves-light btn red modal-trigger' href="#hapus<?php echo $data['ID_Tanaman']?>">Hapus</a></td>

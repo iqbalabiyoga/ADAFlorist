@@ -29,12 +29,13 @@
 
 		mysqli_query($connect,$sql_tambah);
 	?>
-		<script language="javascript">alert("Register Successful");</script>
+		<script language="javascript">alert("Tanaman berhasil ditambahkan");</script>
 					<script>document.location.href='dateup.php';</script>
 	<?php
 	}else {
 		?>
-		<script language="javascript">alert("Register Failed");</script>
+		<script language="javascript">alert("Penambahan tanaman gagal");</script>
+        <script>document.location.href='dateup.php';</script>
 	<?php
 	}
 mysqli_close($connect);

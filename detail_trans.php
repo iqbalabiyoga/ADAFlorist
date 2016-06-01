@@ -115,14 +115,20 @@ if(isset($_SESSION['admin'])){
                                 <?php echo $tanaman['Nama_Tanaman']?>
                             </a>
                         </td>
-                        <td>
-                            <?php echo $tanaman['Harga_Tanaman']?>
+                        <td>Rp 
+                            <?php
+                 $tots=$tanaman['Harga_Tanaman'];
+            echo number_format("$tots",0,",",".")
+         ?>,-
                         </td>
                         <td>
                             <?php echo $ulang['jumlah_beli']?>
                         </td>
-                        <td>
-                            <?php echo ($tanaman['Harga_Tanaman']*$ulang['jumlah_beli'])?>
+                        <td>Rp 
+                            <?php
+                 $totss=($tanaman['Harga_Tanaman']*$ulang['jumlah_beli']);
+            echo number_format("$totss",0,",",".")
+         ?>,-
                         </td>
                     </tr>
                     <?php $total=$total+($tanaman['Harga_Tanaman']*$ulang['jumlah_beli']);
@@ -136,8 +142,12 @@ if(isset($_SESSION['admin'])){
                                 <td>
                                     <?php echo "<strong>$jumlah</strong>"?> buah </td>
                                 <td>
-                                    Rp
-                                    <?php echo "<strong>$total</strong>"?>
+                                    Rp <strong>
+                                    <?php
+                        
+            echo number_format("$total",0,",",".")
+         ?>,-
+                                </strong>
                                 </td>
                             </tr>
 

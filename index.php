@@ -22,7 +22,7 @@
             <div class="row">
                 <form method="get" action="semua.php">
                 <div class="col s9">
-                    <input type="search" name="cari" placeholder="Cari Tanaman">
+                    <input type="search" name="cari" placeholder="nama, jenis, ciri, dan sebagainya">
                 </div>
                 <div class="col s3">
                     <button class="waves-effect waves-light btn" type="submit" name="caris" value="1">Cari</button>
@@ -54,7 +54,9 @@
                             <p class="card-title activator grey-text text-darken-4">
                                 <?php echo $tanaman['Nama_Tanaman']?><i class="material-icons right">more_vert</i></p>
                             <span class="card-title activator cyan-text text-darken-4">
-                                        <div class="row"><div class="col s6"><strong>Rp <?php echo $tanaman['Harga_Tanaman'] ?></strong></div><div class="col s6"><?php if ($tanaman['Jumlah_Stok']>0) echo "<h6 class='white-text teal'>Stok Tersedia</h6>"; else echo "<h6 class='white-text red'>Stok Habis</h6>";?></div></div>
+                                        <div class="row"><div class="col s6"><strong>Rp <?php
+            $tots=$tanaman['Harga_Tanaman'];
+            echo number_format("$tots",0,",",".")  ?></strong></div><div class="col s6"><?php if ($tanaman['Jumlah_Stok']>0) echo "<h6 class='white-text teal'>Stok Tersedia</h6>"; else echo "<h6 class='white-text red'>Stok Habis</h6>";?></div></div>
                             </span>
                             <span class="card-title activator cyan-text text-darken-4">
                     </span>
