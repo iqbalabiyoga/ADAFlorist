@@ -80,6 +80,7 @@
                             </td>
                             <?php $total=$total+$subtotal;
             $jumlah=$jumlah+$value?>
+                             <td><a href='buangdarikeranjang.php?id=<?php echo $id?>'><i class="material-icons">delete</i></a></td>
                         </tr>
                         <?php } ?>
                             <tr class="black-text cyan lighten-5">

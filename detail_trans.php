@@ -157,7 +157,9 @@ if(isset($_SESSION['admin'])){
                     $('.materialboxed').materialbox();
                 });
             </script>
+            <button class="waves-effect waves-light btn right" onclick="window.print()">Cetak Bukti Transaksi</button>
         </div>
+    
 </body>
 <?php include 'footer.php'?>
 
